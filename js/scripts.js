@@ -46,10 +46,24 @@ var scrabble = function(word){
 
   var total = 0;
   array.forEach(function(array1) {
-    total += array1;
+    total += array1 ;
   });
   return total;
 };
 
+
+
+$(document).ready(function(){
+  $("form#scrabble").submit(function(event){
+    var input = $("input#words").val();
+    var result = scrabble(input);
+
+    $(".score").text(result);
+
+
+    event.preventDefault();
+  });
+
+});
 
 
