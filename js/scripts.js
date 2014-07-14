@@ -10,13 +10,46 @@ var scrabble = function(word){
   var wordArray = word.split("");
   var result;
 
-  for (i=0; i< wordArray.length; i++){
+  for (var i=0; i< wordArray.length; i++){
     if (value1.indexOf(wordArray[i]) >= 0){
       result = 1
       array.push(result);
 
+    } else if (value2.indexOf(wordArray[i]) >= 0){
+      result = 2
+      array.push(result);
+
+    } else if (value3.indexOf(wordArray[i]) >= 0){
+      result = 3
+      array.push(result);
+
+    } else if (value4.indexOf(wordArray[i]) >= 0){
+      result = 4
+      array.push(result);
+
+    } else if (value5.indexOf(wordArray[i]) >= 0){
+      result = 5
+     array.push(result);
+
+    } else if (value8.indexOf(wordArray[i]) >= 0){
+      result = 8
+      array.push(result);
+
+    } else if (value10.indexOf(wordArray[i]) >= 0){
+      result = 10
+      array.push(result);
+    } else {
+      break;
     }
   };
-  return array;
+  //return array;
+
+  var total = 0;
+  array.forEach(function(array1) {
+    total += array1;
+  });
+  return total;
 };
+
+
 
